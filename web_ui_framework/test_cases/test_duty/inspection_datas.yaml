@@ -1,0 +1,6 @@
+- "//li[text()='每天']/parent::ul/li[1]"
+- "//li[text()='每天']/parent::ul/li[2]"
+- "//li[text()='每天']/parent::ul/li[3]"
+- "//li[text()='每天']/parent::ul/li[4]"
+- "//li[text()='每天']/parent::ul/li[5]"
+- "//li[text()='每天']/parent::ul/li[6]"

@@ -1,0 +1,81 @@
+set_normal_time:
+# 1、点击时间
+        - by: "xpath"
+          locator: "//tbody/tr[1]//a"
+          wait: clickable
+          action: click
+# 2、清空双击输入框
+        - by: "xpath"
+          locator: "//input[@id]"
+          action: ac_double_click
+        - sleep: 1.5
+# 3、输入时间
+        - by: "xpath"
+          locator: "//input[@id]"
+          action: send
+          value: send_value
+          return_value:
+# 4、点击保存
+        - by: "xpath"
+          locator: "//a[@id='save']"
+          action: click
+          wait: clickable
+        - sleep: 1
+# 5、获取显示的设置时间
+        - by: "xpath"
+          locator: "//tbody/tr[1]//a"
+          return_value:
+
+set_less_boundary_time:
+# 1、点击时间
+        - by: "xpath"
+          locator: "//tbody/tr[1]//a"
+          wait: clickable
+          action: click
+# 2、清空双击输入框
+        - by: "xpath"
+          locator: "//input[@id]"
+          action: ac_double_click
+        - sleep: 1.5
+# 3、输入时间
+        - by: "xpath"
+          locator: "//input[@id]"
+          action: send
+          value: "0"
+# 4、点击保存
+        - by: "xpath"
+          locator: "//a[@id='save']"
+          action: click
+          wait: clickable
+        - sleep: 1
+# 5、获取显示的设置时间
+        - by: "xpath"
+          locator: "//tbody/tr[1]//a"
+          return_value:
+
+set_greater_boundary_time:
+# 1、点击时间
+        - by: "xpath"
+          locator: "//tbody/tr[1]//a"
+          wait: clickable
+          action: click
+# 2、清空双击输入框
+        - by: "xpath"
+          locator: "//input[@id]"
+          action: ac_double_click
+        - sleep: 1.5
+# 3、输入时间
+        - by: "xpath"
+          locator: "//input[@id]"
+          action: send
+          value: "91"
+# 4、点击保存
+        - by: "xpath"
+          locator: "//a[@id='save']"
+          action: click
+          wait: clickable
+        - sleep: 1
+# 5、获取错误弹框信息
+        - by: "xpath"
+          locator: "//i[@class='anticon anticon-info-circle']/following-sibling::span"
+          return_value:

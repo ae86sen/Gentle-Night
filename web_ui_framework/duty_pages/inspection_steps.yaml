@@ -1,0 +1,406 @@
+search_by_name:
+# 1、点击类型箭头下拉框
+        - by: "xpath"
+          locator: "//div[@class='cms-Duty-searchItem'][1]//span[@class='ant-select-arrow']"
+          action: click
+# 2、点击重点任务
+        - by: "xpath"
+          locator: "//ul[contains(@class,'dropdown-menu-vertical')]/li[2]"
+          action: click
+# 3、点击状态下拉框，点击未到执行时间
+        - sleep: 0.5
+        - by: "xpath"
+          locator: "//div[@class='cms-Duty-searchItem'][2]//span[@class='ant-select-arrow']"
+          action: click
+        - by: "xpath"
+          locator: "//ul[contains(@class,'dropdown-menu-vertical')]/li[text()='未到执行时间']"
+          action: click
+# 4、清空时间输入框
+        - sleep: 0.5
+        - by: "xpath"
+          locator: "//span[@class='ant-calendar-picker-icon']"
+          action: ac_hover
+        - by: "xpath"
+          locator: "//i[@class='anticon anticon-cross-circle ant-calendar-picker-clear']"
+          action: click
+          wait: clickable
+# 5、点击时间输入框
+        - by: "xpath"
+          locator: "//span[@class='ant-calendar-picker']"
+          action: click
+# 6、输入开始时间
+        - sleep: 0.5
+        - by: "xpath"
+          locator: "//div[contains(@class,'left')]//input[@class='ant-calendar-input ']"
+          action: send
+          value: send_value
+        - sleep: 1
+# 7、输入结束时间
+        - by: "xpath"
+          locator: "//div[contains(@class,'right')]//input[@class='ant-calendar-input ']"
+          action: send
+          value: send_value
+# 8、搜索框输入
+        - by: "xpath"
+          locator: "//div[@class='cms-Duty-searchItem'][4]//input"
+          action: send
+          value: "自动化测试"
+          return_value:
+        - sleep: 0.5
+# 9、点击搜索
+        - by: "xpath"
+          locator: "//i[contains(@class,'ant-input')]"
+          action: click
+        - sleep: 1
+# 10、检查搜索结果的名称
+        - by: "xpath"
+          locator: "//tbody/tr[1]//a"
+          return_value:
+
+
+add_important_task:
+# 1、鼠标悬停添加按键
+        - by: "xpath"
+          locator: "//span[text()='添加']/parent::button"
+          action: ac_hover
+# 2、点击重点任务
+        - by: "xpath"
+          locator: "//ul[contains(@class,'menu-vertical')]/li[1]"
+          action: click
+# 3、输入任务名称
+        - by: "id"
+          locator: "name"
+          action: send
+          value: "自动化测试"
+          return_value:
+# 4、点击开始时间
+        - by: "xpath"
+          locator: "//span[@id='startTime']//input"
+          action: click
+# 5、输入开始时间
+        - by: "xpath"
+          locator: "//input[@class='ant-calendar-input ']"
+          action: send
+          value: send_value
+        - sleep: 0.5
+# 6、点击确定
+        - by: "xpath"
+          locator: "//a[@class='ant-calendar-ok-btn']"
+          action: click
+        - sleep: 1
+# 7、点击结束时间
+        - by: "xpath"
+          locator: "//span[@id='endTime']//input"
+          action: click
+# 8、输入结束时间
+        - by: "xpath"
+          locator: "//input[@class='ant-calendar-input ']"
+          action: send
+          value: send_value
+        - sleep: 0.5
+# 9、点击确定
+        - by: "xpath"
+          locator: "//a[@class='ant-calendar-ok-btn']"
+          action: click
+# 10、点击添加人员
+        - by: "xpath"
+          locator: "//div[@id='UserSelect']/button"
+          action: click
+# 11、勾选前两名执行人
+        - sleep: 0.5
+        - by: "xpath"
+          locator: "//div[@id='UserSelectTable']//tbody/tr[1]//input"
+          action: click
+        - sleep: 0.5
+        - by: "xpath"
+          locator: "//div[@id='UserSelectTable']//tbody/tr[2]//input"
+          action: click
+# 12、点击确定
+        - by: "xpath"
+          locator: "//div[contains(@style,'width: 1200px')]//span[text()='确 定']/parent::button"
+          action: click
+          wait: clickable
+# 13、点击组织机构输入框
+        - by: "xpath"
+          locator: "//span[@class='ant-select-search__field__placeholder']"
+          action: click
+          wait: clickable
+# 14、点击箭头展开机构栏
+        - sleep: 1
+        - by: "xpath"
+          locator: "//span[@class='ant-select-tree-title']"
+          action: click
+# 15、点击第二个机构
+#        - by: "xpath"
+#          locator: "//ul[@class='ant-select-tree']//ul/li[1]//span[@class='ant-select-tree-title']"
+#          action: click
+#        - by: "id"
+#          locator: "rcDialogTitle3"
+#          action: click
+# 16、鼠标悬停到受检区域
+        - by: "xpath"
+          locator: "//div[@class='ant-dropdown-trigger']"
+          action: ac_hover
+# 17、勾选第二个复选框
+        - sleep: 1
+        - by: "xpath"
+          locator: "//div[contains(@style,'min-width: 320px')]//li[2]//input"
+          action: click
+# 18、双击检查次数
+        - by: "id"
+          locator: "inspectionCount"
+          action: ac_double_click
+# 19、输入次数2次 CSS
+        - by: "css selector"
+          locator: "#inspectionCount"
+          action: send
+          value: "2"
+# 20、输入备注 200
+        - by: "id"
+          locator: "remark"
+          action: send
+          value: "打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打"
+        - sleep: 2
+# 21、点击确定
+        - by: "xpath"
+          locator: "//div[contains(@style,'width: 600px')]//span[text()='确 定']/parent::button"
+          action: click
+        - sleep: 1
+# 22、获取第一条任务名称
+        - by: "xpath"
+          locator: "//tbody/tr[1]//a"
+          return_value:
+
+add_other_task:
+# 1、鼠标悬停添加按键
+        - by: "xpath"
+          locator: "//span[text()='添加']/parent::button"
+          action: ac_hover
+# 2、点击其它任务
+        - by: "xpath"
+          locator: "//ul[contains(@class,'menu-vertical')]/li[2]"
+          action: click
+# 3、输入任务名称
+        - by: "id"
+          locator: "name"
+          action: send
+          value: "autotest"
+          return_value:
+        - sleep: 0.5
+# 4、点击开始时间
+        - by: "xpath"
+          locator: "//span[@id='startTime']//input"
+          action: click
+# 5、输入开始时间
+        - by: "xpath"
+          locator: "//input[@class='ant-calendar-input ']"
+          action: send
+          value: send_value
+        - sleep: 0.5
+# 6、点击确定
+        - by: "xpath"
+          locator: "//a[@class='ant-calendar-ok-btn']"
+          action: click
+        - sleep: 1
+# 7、点击结束时间
+        - by: "xpath"
+          locator: "//span[@id='endTime']//input"
+          action: click
+# 8、输入结束时间
+        - by: "xpath"
+          locator: "//input[@class='ant-calendar-input ']"
+          action: send
+          value: send_value
+        - sleep: 0.5
+# 9、点击确定
+        - by: "xpath"
+          locator: "//a[@class='ant-calendar-ok-btn']"
+          action: click
+# 4、点击添加人员
+        - by: "xpath"
+          locator: "//div[@id='UserSelect']/button"
+          action: click
+# 5、勾选前两名执行人
+        - sleep: 0.5
+        - by: "xpath"
+          locator: "//div[@id='UserSelectTable']//tbody/tr[1]//input"
+          action: click
+        - sleep: 0.5
+        - by: "xpath"
+          locator: "//div[@id='UserSelectTable']//tbody/tr[2]//input"
+          action: click
+# 6、点击确定
+        - by: "xpath"
+          locator: "//div[contains(@style,'width: 1200px')]//span[text()='确 定']/parent::button"
+          action: click
+          wait: clickable
+# 7、点击任务库选择
+        - by: "xpath"
+          locator: "//textarea[@id='content']/parent::span//a"
+          action: click
+# 8、点击第一个任务的选择
+        - by: "xpath"
+          locator: "//div[@class='ant-modal-body']//div[@class='cms-tabSmall']//tbody/tr[1]//button"
+          action: click
+          wait: clickable
+# 8、输入备注 200
+        - by: "id"
+          locator: "remark"
+          action: send
+          value: "打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打"
+        - sleep: 2
+# 9、点击确定
+        - by: "xpath"
+          locator: "//div[contains(@style,'width: 600px')]//span[text()='确 定']/parent::button"
+          action: click
+        - sleep: 1
+# 10、获取第一条任务名称
+        - by: "xpath"
+          locator: "//tbody/tr[1]//a"
+          return_value:
+
+
+batch_add_important_task:
+# 1、鼠标悬停批量添加按键
+        - by: "xpath"
+          locator: "//span[text()='批量添加']/parent::button"
+          action: ac_hover
+# 2、点击重点任务
+        - by: "xpath"
+          locator: "//ul[contains(@class,'menu-vertical')]/li[1]"
+          action: click
+        - sleep: 1
+# 3、点击生成周期下拉框
+        - by: "xpath"
+          locator: "//form//span[@class='ant-select-arrow']"
+          action: click
+# 4、选择周期
+        - by: "xpath"
+          locator: send_value
+          action: click
+# 5、输入任务名称
+        - by: "id"
+          locator: "name"
+          action: send
+          value: "AUTO批量重点"
+        - sleep: 1
+# 6、点击添加人员
+        - by: "xpath"
+          locator: "//div[@id='UserSelect']/button"
+          action: click
+# 7、勾选前两名执行人
+        - sleep: 0.5
+        - by: "xpath"
+          locator: "//div[@id='UserSelectTable']//tbody/tr[1]//input"
+          action: click
+        - sleep: 0.5
+        - by: "xpath"
+          locator: "//div[@id='UserSelectTable']//tbody/tr[2]//input"
+          action: click
+# 8、点击确定
+        - by: "xpath"
+          locator: "//div[contains(@style,'width: 1200px')]//span[text()='确 定']/parent::button"
+          action: click
+          wait: clickable
+# 9、点击组织机构输入框
+        - by: "xpath"
+          locator: "//span[@class='ant-select-search__field__placeholder']"
+          action: click
+          wait: clickable
+# 10、点击顶级机构
+        - sleep: 0.5
+        - by: "xpath"
+          locator: "//span[@class='ant-select-tree-title']"
+          action: click
+# 11、鼠标悬停到受检区域
+        - by: "xpath"
+          locator: "//div[@class='ant-dropdown-trigger']"
+          action: ac_hover
+# 12、勾选第二个复选框
+        - sleep: 1
+        - by: "xpath"
+          locator: "//div[contains(@style,'min-width: 320px')]//li[2]//input"
+          action: click
+# 13、双击检查次数
+        - by: "id"
+          locator: "inspectionCount"
+          action: ac_double_click
+# 14、输入次数2次 CSS
+        - by: "css selector"
+          locator: "#inspectionCount"
+          action: send
+          value: "2"
+# 15、输入备注 200
+        - by: "id"
+          locator: "remark"
+          action: send
+          value: "打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打"
+        - sleep: 2
+# 16、点击确定
+        - by: "xpath"
+          locator: "//div[contains(@style,'width: 600px')]//span[text()='确 定']/parent::button"
+          action: click
+        - sleep: 1
+
+batch_add_other_task:
+# 1、鼠标悬停批量添加按键
+        - by: "xpath"
+          locator: "//span[text()='批量添加']/parent::button"
+          action: ac_hover
+# 2、点击其他任务
+        - by: "xpath"
+          locator: "//ul[contains(@class,'menu-vertical')]/li[2]"
+          action: click
+        - sleep: 1
+# 3、点击生成周期下拉框
+        - by: "xpath"
+          locator: "//form//span[@class='ant-select-arrow']"
+          action: click
+# 4、选择周期
+        - by: "xpath"
+          locator: send_value
+          action: click
+# 5、输入任务名称
+        - by: "id"
+          locator: "name"
+          action: send
+          value: "AUTO批量其他"
+        - sleep: 1
+# 6、点击添加人员
+        - by: "xpath"
+          locator: "//div[@id='UserSelect']/button"
+          action: click
+# 7、勾选前两名执行人
+        - sleep: 0.5
+        - by: "xpath"
+          locator: "//div[@id='UserSelectTable']//tbody/tr[1]//input"
+          action: click
+        - sleep: 0.5
+        - by: "xpath"
+          locator: "//div[@id='UserSelectTable']//tbody/tr[2]//input"
+          action: click
+# 8、点击确定
+        - by: "xpath"
+          locator: "//div[contains(@style,'width: 1200px')]//span[text()='确 定']/parent::button"
+          action: click
+          wait: clickable
+# 9、点击任务库选择
+        - by: "xpath"
+          locator: "//textarea[@id='content']/parent::span//a"
+          action: click
+# 10、点击第一个任务的选择
+        - by: "xpath"
+          locator: "//div[@class='ant-modal-body']//div[@class='cms-tabSmall']//tbody/tr[1]//button"
+          action: click
+          wait: clickable
+# 11、输入备注 200
+        - by: "id"
+          locator: "remark"
+          action: send
+          value: "打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打打撒大苏打阿斯大苏打"
+        - sleep: 2
+# 12、点击确定
+        - by: "xpath"
+          locator: "//div[contains(@style,'width: 600px')]//span[text()='确 定']/parent::button"
+          action: click
+        - sleep: 1

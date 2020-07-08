@@ -1,0 +1,215 @@
+check_add_task:
+#1.点击添加按钮
+        - by: "xpath"
+          locator: "//button[contains(@class,'cms-marginRight-xs')]"
+          action: click
+#2.输入任务名称
+        - by: "id"
+          locator: "name"
+          action: send
+          value: "autoTest"
+          return_value:
+#3.点击开始时间
+        - by: "xpath"
+          locator: "//span[@id='startTime']//input"
+          action: click
+#4.输入开始时间
+        - by: "xpath"
+          locator: "//input[@class='ant-calendar-input ']"
+          action: send
+          value: send_value
+        - sleep: 0.5
+#5.点击确定按钮
+        - by: "xpath"
+          locator: "//a[@class='ant-calendar-ok-btn']"
+          action: click
+#6.点击结束时间
+        - by: "xpath"
+          locator: "//span[@id='endTime']//input"
+          action: click
+        - sleep: 0.5
+#7.结束时间输入
+        - by: "xpath"
+          locator: "//input[@class='ant-calendar-input ']"
+          action: send
+          value: send_value
+        - sleep: 0.5
+#8.点击确定按钮
+        - by: "xpath"
+          locator: "//a[@class='ant-calendar-ok-btn']"
+          action: click
+#9.添加人员按钮
+        - by: "xpath"
+          locator: "//div[@id='UserSelect']/button"
+          action: click
+#10.勾选人员
+        - sleep: 0.5
+        - by: "xpath"
+          locator: "//div[@id='UserSelectTable']//tbody/tr[1]//input"
+          action: click
+        - sleep: 0.5
+        - by: "xpath"
+          locator: "//div[@id='UserSelectTable']//tbody/tr[2]//input"
+          action: click
+#11.点击确定
+        - by: "xpath"
+          locator: "//div[contains(@style,'width: 1200px')]//span[text()='确 定']/parent::button"
+          action: click
+          wait: clickable
+#12.点击组织机构输入框
+        - by: "xpath"
+          locator: "//span[@class='ant-select-search__field__placeholder']"
+          action: click
+          wait: clickable
+#13.展开组织机构框
+        - sleep: 0.5
+        - by: "xpath"
+          locator: "//ul[ @class ='ant-select-tree']/li/span[1]"
+          action: click
+#14.选择组织机构
+        - sleep: 0.5
+        - by: "xpath"
+          locator: "//ul[@class='ant-select-tree']//li[1]//span[contains(@class,'content-wrapper-open')]"
+          action: click
+        - sleep: 0.5
+        - by: "xpath"
+          locator: "//ul[contains(@class,'ant-select-tree-child-tree')]//span[2]"
+          action: click
+#15.点击空白处关闭组织树
+        - by: "xpath"
+          locator: "//ul[@class='ant-select-selection__rendered']"
+          action: click
+#16.鼠标悬浮受检区域
+        - by: "xpath"
+          locator: "//div[@class='ant-dropdown-trigger']"
+          action: ac_hover
+#17.受检区域勾选
+        - by: "xpath"
+          locator: "//div[contains(@style,'min-width: 320px')]//li[2]//input"
+          action: click
+#18.输入备注 200
+        - by: "id"
+          locator: "remark"
+          action: send
+          value: "备注备注备注备注备注备注备注备注备注备注备注备注备注备备注备注备注备注备注备注备注备注备注备注备注备注备注备备注备注备注备注备注备注备注备注备注备注备注备注备注备备注备注备注备注备注备注备注备注备注备注备注备注备注备备注备注备注备注备注备注备注备注备注备注备注备注备注备备注备注备注备注备注备注备注备注备注备注备注备注备注备备注备注备注备注备注备注备注备注备注备注备注备注备注备备注备注备注备注备注备11111"
+        - sleep: 0.5
+#19.点击保存按钮
+        - by: "xpath"
+          locator: "//div[contains(@style,'width: 600px')]//span[text()='确 定']/parent::button"
+          action: click
+        - sleep: 1
+#20.获取第一条任务名称
+        - by: "xpath"
+          locator: "//tbody/tr[1]//a"
+          return_value:
+
+selct_by_name:
+#1.清除时间框
+        - by: "xpath"
+          locator: "//span[contains(@class,'ant-calendar-picker-icon')]"
+          action: click
+#2.点击时间控件
+        - by: "xpath"
+          locator: "//span[contains(@class,'ant-calendar-picker-input ant-input')]"
+          action: click
+        - sleep: 0.5
+#3.输入开始时间
+        - by: "xpath"
+          locator: "//div[contains(@class,'range-left')]//input[1]"
+          action: send
+          value: send_value
+        - sleep: 0.3
+#4.输入结束时间
+        - by: "xpath"
+          locator: "//div[contains(@class,'range-right')]//input[1]"
+          action: send
+          value: send_value
+        - sleep: 0.3
+#5. 传值至名称输入框中
+        - by: "xpath"
+          locator: "//span[contains(@class,'wrapper')]/input"
+          action: send
+          value: send_value
+#6. 点击查询按钮
+        - by: "xpath"
+          locator: "//span[contains(@class,'wrapper')]/../button"
+          action: click
+        - sleep: 1
+#7. 获取查询出的所有任务名称
+        - by: "xpath"
+          locator: "//tr//td[3]//a"
+          return_value:
+
+selct_by_person:
+#1.清除时间框
+        - by: "xpath"
+          locator: "//span[contains(@class,'ant-calendar-picker-icon')]"
+          action: click
+#2.点击时间控件
+        - by: "xpath"
+          locator: "//span[contains(@class,'ant-calendar-picker-input ant-input')]"
+          action: click
+        - sleep: 0.5
+#3.输入开始时间
+        - by: "xpath"
+          locator: "//div[contains(@class,'range-left')]//input[1]"
+          action: send
+          value: send_value
+        - sleep: 0.3
+#4.输入结束时间
+        - by: "xpath"
+          locator: "//div[contains(@class,'range-right')]//input[1]"
+          action: send
+          value: send_value
+        - sleep: 0.3
+#5. 传值至名称输入框中
+        - by: "xpath"
+          locator: "//span[contains(@class,'wrapper')]/input"
+          action: send
+          value: send_value
+#6. 点击查询按钮
+        - by: "xpath"
+          locator: "//span[contains(@class,'wrapper')]/../button"
+          action: click
+        - sleep: 1
+#7. 获取查询出的所有任务名称
+        - by: "xpath"
+          locator: "//tbody//tr[1]//td[6]"
+          return_value:
+
+selct_by_content:
+#1.清除时间框
+        - by: "xpath"
+          locator: "//span[contains(@class,'ant-calendar-picker-icon')]"
+          action: click
+#2.点击时间控件
+        - by: "xpath"
+          locator: "//span[contains(@class,'ant-calendar-picker-input ant-input')]"
+          action: click
+        - sleep: 0.5
+#3.输入开始时间
+        - by: "xpath"
+          locator: "//div[contains(@class,'range-left')]//input[1]"
+          action: send
+          value: send_value
+        - sleep: 0.3
+#4.输入结束时间
+        - by: "xpath"
+          locator: "//div[contains(@class,'range-right')]//input[1]"
+          action: send
+          value: send_value
+        - sleep: 0.3
+#5. 传值至名称输入框中
+        - by: "xpath"
+          locator: "//span[contains(@class,'wrapper')]/input"
+          action: send
+          value: send_value
+#6. 点击查询按钮
+        - by: "xpath"
+          locator: "//span[contains(@class,'wrapper')]/../button"
+          action: click
+        - sleep: 1
+#7. 获取查询出的所有任务名称
+        - by: "xpath"
+          locator: "//tbody//tr[1]//td[8]"
+          return_value:

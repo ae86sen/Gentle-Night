@@ -1,0 +1,77 @@
+#add_rule: # 添加规则
+# 1、点击添加
+- by: "xpath"
+  locator: "//button[@class='ant-btn ant-dropdown-trigger ant-btn-primary']"
+  action: click
+# 2、点击分组定时轮巡
+- by: "xpath"
+  locator: "//ul[@id='menu']/li[1]//span"
+  action: click
+# 3、输入名称
+- by: "xpath"
+  locator: "//input[@id='name']"
+  action: send
+  value: testinggggg
+# 4、点击添加进入规则配置界面
+- by: "xpath"
+  locator: "//a/button[@class='ant-btn ant-btn-primary']"
+  action: click
+# 5、输入开始时间
+- by: "xpath"
+  locator: "//span[@class='ant-time-picker ']/input[@placeholder]"
+  action: click
+
+- by: "xpath"
+  locator: "//div[@class='ant-time-picker-panel-combobox']/div[1]//li[contains(@class,'selected')]/following-sibling::li[1]"
+  action: click
+
+- by: "xpath"
+  locator: "//div[@class='ant-time-picker-panel-combobox']/div[2]//li[contains(@class,'selected')]/following-sibling::li[2]"
+  action: click
+
+- by: "xpath"
+  locator: "//label[@for='startTime']"
+  action: click
+# 6、选择四窗格
+- by: "xpath"
+  locator: "//div[@class='cms-text-right']/a[2]"
+  action: click
+
+# 7、勾选窗格
+- by: "xpath"
+  locator: "//ul[contains(@class,'canvasFour')]/li[1]//input"
+  action: click
+
+- by: "xpath"
+  locator: "//ul[contains(@class,'canvasFour')]/li[2]//input"
+  action: click
+
+- by: "xpath"
+  locator: "//ul[contains(@class,'canvasFour')]/li[3]//input"
+  action: click
+
+- by: "xpath"
+  locator: "//ul[contains(@class,'canvasFour')]/li[4]//input"
+  action: click
+
+# 8、选择分组
+- by: "xpath"
+  locator: "//div[@id='timingGroupEditorSelect']//input"
+  action: click
+
+- by: "xpath"
+  locator: "//li[@role='option'][1]"
+  action: click
+
+- by: "xpath"
+  locator: "//label[@for='startTime']"
+  action: click
+
+# 9、点击确认回到添加界面
+- by: "xpath"
+  locator: "//form[@id='timingGroupEditorForm']/ancestor::div[@class='ant-modal-content']//button[@class='ant-btn ant-btn-primary']"
+  action: click
+# 10、点击确认
+- by: "xpath"
+  locator: "//span[text()='确 认']/parent::button"
+  action: click

@@ -1,0 +1,139 @@
+config_output:
+# 1、点击“客户端”
+        - by: "xpath"
+          locator: "//div[text()='客户端']"
+          action: click
+# 2、点击第一个客户端的呼出设备
+        - by: "xpath"
+          locator: "//div[@id='VaultClientTabPaneTable']//tbody/tr[1]/td[1]//a"
+          action: click
+          wait: clickable
+# 3、点击选择框
+        - by: "xpath"
+          locator: "//div[@id='selectDevice']//div[@class='ant-select-selection__rendered']"
+          action: click
+# 4、选择第2个呼出设备
+        - by: "xpath"
+          locator: "//ul[@role='listbox']/li[2]"
+          action: click
+# 5、获取添加设备名称
+        - by: "xpath"
+          locator: "//div[@id='selectDevice']//div[@class='ant-select-selection-selected-value']"
+          return_value:
+# 6、点击保存
+        - by: "xpath"
+          locator: "//i[@class='fa fa-save']"
+          action: click
+# 7、获取添加设备名称
+        - by: "xpath"
+          locator: "//div[@id='VaultClientTabPaneTable']//tbody/tr[1]/td[1]//a"
+          return_value:
+
+
+add_view:
+# 1、点击“客户端”
+        - by: "xpath"
+          locator: "//div[text()='客户端']"
+          action: click
+# 2、点击第一个客户端的值守视图添加按键
+        - by: "xpath"
+          locator: "//div[@id='VaultClientTabPaneTable']//tbody/tr[1]//div[@class='cms-marginBottom-lg']/button[@id='add']"
+          action: click
+          wait: clickable
+# 3、点击第一个选择框
+        - by: "xpath"
+          locator: "//ul[@role='tree-node']//ul/li[1]//li[1]//span[@class='ant-tree-checkbox']"
+          action: click
+# 4、获取视图名称
+        - by: "xpath"
+          locator: "//ul[@role='tree-node']//ul/li[1]//li[1]//span[@class='ant-tree-title']/span"
+          return_value:
+# 5、点击确定
+        - by: "xpath"
+          locator: "//span[text()='确 定']/parent::button"
+          action: click
+# 6、添加完成后获取视图名称
+        - by: "xpath"
+          locator: "//div[@id='VaultClientTabPaneTable']//tbody/tr[1]/td[2]//div[@data-show]"
+          return_value:
+
+del_view:
+# 1、点击“客户端”
+        - by: "xpath"
+          locator: "//div[text()='客户端']"
+          action: click
+# 2、获取第一个客户端的视图数量
+        - by: "xpath"
+          locator: "//div[@id='VaultClientTabPaneTable']//tbody/tr[1]/td[2]//div[@data-show]"
+          number:
+          return_value:
+# 3、点击第一个客户端的第一个值守视图删除按键
+        - by: "xpath"
+          locator: "//div[@id='VaultClientTabPaneTable']//tbody/tr[1]/td[2]//i[contains(@class,'cross')]"
+          action: click
+          wait: clickable
+# 4、点击确定
+        - by: "xpath"
+          locator: "//span[text()='确 认']/parent::button"
+          action: click
+          wait: clickable
+# 5、删除后获取视图名称
+        - by: "xpath"
+          locator: "//div[@id='VaultClientTabPaneTable']//tbody/tr[1]/td[2]//div[@data-show]"
+          number:
+          return_value:
+
+add_golden:
+# 1、点击“客户端”
+        - by: "xpath"
+          locator: "//div[text()='客户端']"
+          action: click
+# 2、点击第一个客户端的管辖金库添加按键
+        - by: "xpath"
+          locator: "//div[@id='VaultClientTabPaneTable']//tbody/tr[1]/td[3]//button"
+          action: click
+          wait: clickable
+# 3、点击选择第一个机构
+        - sleep: 1
+        - by: "xpath"
+          locator: "//div[@id='CheckboxGroup']//p[1]//input"
+          action: click
+# 4、获取机构名称
+        - by: "xpath"
+          locator: "//div[@id='CheckboxGroup']//p[1]//span[text()]"
+          return_value:
+# 5、点击确定
+        - by: "xpath"
+          locator: "//span[text()='确 定']/parent::button"
+          action: click
+        - sleep: 1
+# 6、添加完成后获取机构名称
+        - by: "xpath"
+          locator: "//div[@id='VaultClientTabPaneTable']//tbody/tr[1]/td[3]//div[@data-show][last()]"
+          return_value:
+
+del_golden:
+# 1、点击“客户端”
+        - by: "xpath"
+          locator: "//div[text()='客户端']"
+          action: click
+# 2、获取第一个客户端的视图数量
+        - by: "xpath"
+          locator: "//div[@id='VaultClientTabPaneTable']//tbody/tr[1]/td[3]//div[@data-show]"
+          number:
+          return_value:
+# 3、点击第一个客户端的第一个金库删除按键
+        - by: "xpath"
+          locator: "//div[@id='VaultClientTabPaneTable']//tbody/tr[1]/td[3]//i[contains(@class,'cross')]"
+          action: click
+          wait: clickable
+# 4、点击确定
+        - by: "xpath"
+          locator: "//span[text()='确 认']/parent::button"
+          action: click
+          wait: clickable
+# 5、删除后获取视图名称
+        - by: "xpath"
+          locator: "//div[@id='VaultClientTabPaneTable']//tbody/tr[1]/td[3]//div[@data-show]"
+          number:
+          return_value:

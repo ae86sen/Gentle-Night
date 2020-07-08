@@ -1,0 +1,105 @@
+add_content:
+# 1、点击添加
+        - by: "xpath"
+          locator: "//span[text()='添 加']/parent::button"
+          wait: clickable
+          action: click
+# 2、输入内容
+        - by: "id"
+          locator: "content"
+          action: send
+          value: send_value
+# 4、获取输入内容文本
+        - by: "id"
+          locator: "content"
+          return_value:
+# 5、点击确定
+        - by: "xpath"
+          locator: "//button[@class='ant-btn ant-btn-primary']"
+          action: click
+        - sleep: 1
+# 6、获取添加内容
+        - by: "xpath"
+          locator: "//table/tbody/tr[1]/td[3]"
+          return_value:
+
+add_content_none:
+# 1、点击添加
+        - by: "xpath"
+          locator: "//span[text()='添 加']/parent::button"
+          wait: clickable
+          action: click
+# 2、强制等待
+        - sleep: 1
+# 3、点击确定
+        - by: "xpath"
+          locator: "//button[@class='ant-btn ant-btn-primary']"
+          action: click
+# 4、获取错误提示
+        - by: "xpath"
+          locator: "//div[@class='ant-form-explain']"
+          return_value:
+
+copy_content:
+# 1、勾选第一个内容
+        - by: "xpath"
+          locator: "//table/tbody/tr[1]/td[1]//input"
+          action: click
+# 2、获取第一个内容文本
+        - by: "xpath"
+          locator: "//table/tbody/tr[1]/td[3]"
+          return_value:
+# 3、点击复制
+        - by: "xpath"
+          locator: "//span[text()='复 制']/parent::button"
+          action: click
+# 4、点击选择框
+        - by: "xpath"
+          locator: "//form//div[@class='ant-select-selection__rendered']"
+          action: click
+# 5、点击第二个机构
+        - by: "xpath"
+          locator: "//ul[@role='listbox']/li[2]"
+          action: click
+# 6、随便点一下
+        - by: "xpath"
+          locator: "//div[@id='rcDialogTitle0']"
+          action: click
+# 7、点击确定
+        - by: "xpath"
+          locator: "//button[@class='ant-btn ant-btn-primary']"
+          action: click
+# 8、点击跳转到第二个机构
+        - by: "xpath"
+          locator: "//div[@class='ant-col-4']//li[2]"
+          action: click
+# 9、获取第一个内容文本
+        - by: "xpath"
+          locator: "//table/tbody/tr[1]/td[3]"
+          return_value:
+
+del_content:
+# 1、勾选第一个内容
+        - by: "xpath"
+          locator: "//table/tbody/tr[1]/td[1]//input"
+          action: click
+# 2、获取内容数量
+        - by: "xpath"
+          locator: "//table/tbody/tr"
+          number:
+          return_value:
+# 3、点击删除
+        - by: "xpath"
+          locator: "//span[text()='删 除']/parent::button"
+          action: click
+# 4、点击确定
+        - by: "xpath"
+          locator: "//button[@class='ant-btn ant-btn-primary ant-btn-sm']"
+          action: click
+          wait: clickable
+        - sleep: 0.5
+# 5、删除后获取内容数量
+        - by: "xpath"
+          locator: "//table/tbody/tr"
+          number:
+          return_value:

@@ -1,0 +1,46 @@
+switch_device:
+# 1、点击报警设备
+        - sleep: 2
+        - by: "xpath"
+          locator: "//div[@role='tab'][2]"
+          action: click
+        - sleep: 1
+        - by: "xpath"
+          locator: "//div[@role='tab'][2]"
+          attribute: "aria-selected"
+          return_value:
+# 2、点击下一页
+        - by: "xpath"
+          locator: "//span[@class='ant-tabs-tab-next-icon']"
+          action: click
+# 3、点击门禁设备
+        - by: "xpath"
+          locator: "//div[@role='tab'][3]"
+          action: click
+        - sleep: 1
+        - by: "xpath"
+          locator: "//div[@role='tab'][3]"
+          attribute: "aria-selected"
+          return_value:
+# 4、点击对讲设备
+        - by: "xpath"
+          locator: "//div[@role='tab'][4]"
+          action: click
+        - sleep: 1
+        - by: "xpath"
+          locator: "//div[@role='tab'][4]"
+          attribute: "aria-selected"
+          return_value:
+# 5、点击上一页
+        - by: "xpath"
+          locator: "//span[@class='ant-tabs-tab-prev-icon']"
+          action: click
+# 6、点击视频设备
+        - by: "xpath"
+          locator: "//div[@role='tab'][1]"
+          action: click
+        - sleep: 1
+        - by: "xpath"
+          locator: "//div[@role='tab'][1]"
+          attribute: "aria-selected"
+          return_value:

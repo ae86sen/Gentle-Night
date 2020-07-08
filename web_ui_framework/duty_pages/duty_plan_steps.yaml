@@ -1,0 +1,350 @@
+batch_add_plan:
+# 1、点击批量添加
+        - by: "xpath"
+          locator: "//span[text()='批量添加']/parent::button"
+          action: click
+          wait: clickable
+# 2、点击时间控件
+        - by: "xpath"
+          locator: "//span[@id='times']/span"
+          action: click
+# 3、输入开始时间
+        - sleep: 0.5
+        - by: "xpath"
+          locator: "//div[contains(@class,'left')]//input[@class='ant-calendar-input ']"
+          action: send
+          value: send_value
+        - sleep: 0.5
+# 4、输入结束时间
+        - by: "xpath"
+          locator: "//div[contains(@class,'right')]//input[@class='ant-calendar-input ']"
+          action: send
+          value: send_value
+        - sleep: 0.5
+# 5、点击值班时间
+        - by: "xpath"
+          locator: "//tbody/tr[1]//input"
+          action: click
+# 6、输入值班时间
+        - by: "xpath"
+          locator: "//input[@class='ant-time-picker-panel-input  ']"
+          action: send
+          value: "09:00"
+# 7、点击值班人员
+        - by: "xpath"
+          locator: "//tbody/tr[1]//button"
+          action: click
+# 8、选择前两个值班人员
+        - by: "xpath"
+          locator: "//div[@class='cms-Duty-checkGroup']/div[1]//input"
+          action: click
+        - by: "xpath"
+          locator: "//div[@class='cms-Duty-checkGroup']/div[2]//input"
+          action: click
+# 9、点击确定
+        - by: "xpath"
+          locator: "//div[@class='cms-Duty-PopoverFoot']/a[2]"
+          action: click
+# 10、点击任务配置
+        - by: "xpath"
+          locator: "//tbody/tr[1]/td[5]//a[@href]"
+          action: click
+# 11、点击任务添加
+        - by: "xpath"
+          locator: "//div[@aria-labelledby='rcDialogTitle0']//span[text()='添 加']/parent::button"
+          action: click
+          wait: clickable
+# 12、点击组织机构栏
+        - by: "xpath"
+          locator: "//span[@class='ant-select-search__field__placeholder']"
+          action: click
+          wait: clickable
+# 13、点击顶级机构
+        - by: "xpath"
+          locator: "//span[@class='ant-select-tree-title']"
+          action: click
+# 14、鼠标移到受检区域
+        - by: "xpath"
+          locator: "//div[@class='ant-dropdown-trigger']"
+          action: ac_hover
+# 15、选择第一个区域
+        - by: "xpath"
+          locator: "//div[contains(@class,'bottomLeft')]//ul[contains(@class,'menu-vertical')]/li[1]//input"
+          action: click
+# 16、点击确定
+        - by: "xpath"
+          locator: "//div[@id='taskpopover']//button[@class='ant-btn ant-btn-primary']"
+          action: click
+# 17、点击确定
+        - by: "xpath"
+          locator: "//div[@class='ant-modal-footer']//button[@class='ant-btn ant-btn-primary']"
+          action: click
+# 18、点击添加，添加第二班
+        - by: "id"
+          locator: "add"
+          action: click
+# 19、点击值班时间
+        - by: "xpath"
+          locator: "//tbody/tr[2]//input"
+          action: click
+# 20、输入值班时间
+        - by: "xpath"
+          locator: "//input[@class='ant-time-picker-panel-input  ']"
+          action: send
+          value: "11:00"
+# 21、点击值班人员
+        - by: "xpath"
+          locator: "//tbody/tr[2]//button"
+          action: click
+# 22、选择第三、四个值班人员
+        - by: "xpath"
+          locator: "//body/div[8]//div[@class='cms-Duty-checkGroup']/div[3]//input"
+          action: click
+        - by: "xpath"
+          locator: "//body/div[8]//div[@class='cms-Duty-checkGroup']/div[4]//input"
+          action: click
+# 23、点击确定
+        - by: "xpath"
+          locator: "//body/div[8]//div[@class='cms-Duty-PopoverFoot']/a[2]"
+          action: click
+# 25、点击任务配置
+        - by: "xpath"
+          locator: "//tbody/tr[2]/td[5]//a[@href]"
+          action: click
+# 26、点击任务添加
+        - by: "xpath"
+          locator: "//div[@aria-labelledby='rcDialogTitle1']//span[text()='添 加']/parent::button"
+          action: click
+          wait: clickable
+# 27、点击组织机构栏
+        - by: "xpath"
+          locator: "//span[@class='ant-select-search__field__placeholder']"
+          action: click
+          wait: clickable
+# 28、点击顶级机构
+        - by: "xpath"
+          locator: "//span[@class='ant-select-tree-title']"
+          action: click
+# 29、鼠标移到受检区域
+        - by: "xpath"
+          locator: "//div[@class='ant-dropdown-trigger']"
+          action: ac_hover
+# 30、选择第二个区域
+        - by: "xpath"
+          locator: "//div[contains(@class,'bottomLeft')]//ul[contains(@class,'menu-vertical')]/li[2]//input"
+          action: click
+# 31、点击确定
+        - by: "xpath"
+          locator: "//div[@id='taskpopover']//button[@class='ant-btn ant-btn-primary']"
+          action: click
+# 32、点击确定
+        - by: "xpath"
+          locator: "//div[@aria-labelledby='rcDialogTitle1']//div[@class='ant-modal-footer']//button[@class='ant-btn ant-btn-primary']"
+          action: click
+# 33、点击添加，添加第三班
+        - by: "id"
+          locator: "add"
+          action: click
+# 34、点击值班时间
+        - by: "xpath"
+          locator: "//tbody/tr[3]//input"
+          action: click
+# 35、输入值班时间
+        - by: "xpath"
+          locator: "//input[@class='ant-time-picker-panel-input  ']"
+          action: send
+          value: "14:00"
+# 36、点击值班人员
+        - by: "xpath"
+          locator: "//tbody/tr[3]//button"
+          action: click
+# 37、选择前两个值班人员
+        - by: "xpath"
+          locator: "//div[@class='ant-popover ant-popover-placement-bottom']//div[@class='cms-Duty-checkGroup']/div[1]//input"
+          action: click
+        - by: "xpath"
+          locator: "//div[@class='ant-popover ant-popover-placement-bottom']//div[@class='cms-Duty-checkGroup']/div[2]//input"
+          action: click
+# 38、点击确定
+        - by: "xpath"
+          locator: "//div[@class='ant-popover ant-popover-placement-bottom']//div[@class='cms-Duty-PopoverFoot']/a[2]"
+          action: click
+# 40、点击任务配置
+        - by: "xpath"
+          locator: "//tbody/tr[3]/td[5]//a[@href]"
+          action: click
+# 41、点击任务添加
+        - by: "xpath"
+          locator: "//div[@aria-labelledby='rcDialogTitle2']//span[text()='添 加']/parent::button"
+          action: click
+          wait: clickable
+# 42、点击组织机构栏
+        - by: "xpath"
+          locator: "//span[@class='ant-select-search__field__placeholder']"
+          action: click
+          wait: clickable
+# 43、点击顶级机构
+        - by: "xpath"
+          locator: "//span[@class='ant-select-tree-title']"
+          action: click
+# 44、鼠标移到受检区域
+        - by: "xpath"
+          locator: "//div[@class='ant-dropdown-trigger']"
+          action: ac_hover
+# 45、选择第三个区域
+        - by: "xpath"
+          locator: "//div[contains(@class,'bottomLeft')]//ul[contains(@class,'menu-vertical')]/li[3]//input"
+          action: click
+# 46、点击确定
+        - by: "xpath"
+          locator: "//div[@id='taskpopover']//button[@class='ant-btn ant-btn-primary']"
+          action: click
+# 47、点击确定
+        - by: "xpath"
+          locator: "//div[@aria-labelledby='rcDialogTitle2']//div[@class='ant-modal-footer']//button[@class='ant-btn ant-btn-primary']"
+          action: click
+# 48、点击添加，添加第四班
+        - by: "id"
+          locator: "add"
+          action: click
+# 49、点击值班时间
+        - by: "xpath"
+          locator: "//tbody/tr[4]//input"
+          action: click
+# 50、输入值班时间
+        - by: "xpath"
+          locator: "//input[@class='ant-time-picker-panel-input  ']"
+          action: send
+          value: "16:00"
+# 51、点击值班人员
+        - by: "xpath"
+          locator: "//tbody/tr[4]//button"
+          action: click
+# 52、选择第三、四个值班人员
+        - by: "xpath"
+          locator: "//div[@class='ant-popover ant-popover-placement-bottom']//div[@class='cms-Duty-checkGroup']/div[3]//input"
+          action: click
+        - by: "xpath"
+          locator: "//div[@class='ant-popover ant-popover-placement-bottom']//div[@class='cms-Duty-checkGroup']/div[4]//input"
+          action: click
+# 53、点击确定
+        - by: "xpath"
+          locator: "//div[@class='ant-popover ant-popover-placement-bottom']//div[@class='cms-Duty-PopoverFoot']/a[2]"
+          action: click
+
+# 55、点击任务配置
+        - by: "xpath"
+          locator: "//tbody/tr[4]/td[5]//a[@href]"
+          action: click
+# 56、点击任务添加
+        - by: "xpath"
+          locator: "//div[@aria-labelledby='rcDialogTitle3']//span[text()='添 加']/parent::button"
+          action: click
+          wait: clickable
+# 57、点击组织机构栏
+        - by: "xpath"
+          locator: "//span[@class='ant-select-search__field__placeholder']"
+          action: click
+          wait: clickable
+# 58、点击顶级机构
+        - by: "xpath"
+          locator: "//span[@class='ant-select-tree-title']"
+          action: click
+# 59、鼠标移到受检区域
+        - by: "xpath"
+          locator: "//div[@class='ant-dropdown-trigger']"
+          action: ac_hover
+# 60、选择第四个区域
+        - by: "xpath"
+          locator: "//div[contains(@class,'bottomLeft')]//ul[contains(@class,'menu-vertical')]/li[4]//input"
+          action: click
+# 61、点击确定
+        - by: "xpath"
+          locator: "//div[@id='taskpopover']//button[@class='ant-btn ant-btn-primary']"
+          action: click
+# 62、点击确定
+        - by: "xpath"
+          locator: "//div[@aria-labelledby='rcDialogTitle3']//div[@class='ant-modal-footer']//button[@class='ant-btn ant-btn-primary']"
+          action: click
+# 63、点击确定添加
+        - by: "xpath"
+          locator: "//button[@class='ant-btn ant-btn-primary']"
+          action: click
+
+setting:
+# 1、点击设置
+        - by: "xpath"
+          locator: "//div[@class='cms-box-inlineBlock']/button"
+          action: click
+# 2、双击偏差时间
+        - sleep: 0.5
+        - by: "css selector"
+          locator: ".ant-input-number-input"
+          action: ac_double_click
+        - sleep: 0.5
+# 3、输入偏差时间
+        - by: "css selector"
+          locator: ".ant-input-number-input"
+          action: send
+          value: send_value
+# 4、点击验证方式
+        - by: "xpath"
+          locator: "//p[@id='dutySettingSelect_VerifyType']//div[@class='ant-select-selection__rendered']/div"
+          action: click
+# 5、选择门禁
+        - by: "xpath"
+          locator: "//ul[@role='listbox']/li[1]"
+          action: click
+# 6、点击确认
+        - by: "xpath"
+          locator: "//button[@class='ant-btn ant-btn-primary']"
+          action: click
+
+prevent_sleep:
+# 1、点击设置
+        - by: "xpath"
+          locator: "//button[@class='ant-btn cms-marginRight-xs']"
+          action: click
+# 2、点击随机提醒
+        - sleep: 0.5
+        - by: "xpath"
+          locator: "//div[@id='remindType']//label[2]//input"
+          action: click
+# 3、点击指纹验证
+        - sleep: 0.5
+        - by: "xpath"
+          locator: "//div[@id='checkType']//label[2]//input"
+          action: click
+# 4、双击超时时间
+        - by: "css selector"
+          locator: "input[id='overTime']"
+          action: ac_double_click
+# 5、输入超时时间
+        - by: "css selector"
+          locator: "input[id='overTime']"
+          action: send
+          value: send_value
+# 6、点击确认
+        - by: "xpath"
+          locator: "//button[@class='ant-btn ant-btn-primary']"
+          action: click
+
+prevent_sleep_clear:
+# 1、点击设置
+        - by: "xpath"
+          locator: "//button[@class='ant-btn cms-marginRight-xs']"
+          action: click
+# 2、点击定时提醒
+        - sleep: 0.5
+        - by: "xpath"
+          locator: "//div[@id='remindType']//label[1]//input"
+          action: click
+# 3、点击密码验证
+        - sleep: 0.5
+        - by: "xpath"
+          locator: "//div[@id='checkType']//label[1]//input"
+          action: click
+# 6、点击确认
+        - by: "xpath"
+          locator: "//button[@class='ant-btn ant-btn-primary']"
+          action: click

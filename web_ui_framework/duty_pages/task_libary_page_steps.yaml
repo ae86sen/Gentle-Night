@@ -1,0 +1,307 @@
+add_important_task:
+# 1、点击添加
+        - by: "xpath"
+          locator: "//span[text()='添 加']/parent::button"
+          wait: clickable
+          action: click
+# 2、输入任务名称
+        - by: "id"
+          locator: "name"
+          action: send
+          value: "important_task"
+          return_value:
+# 3、鼠标悬停到受检区域
+        - by: "xpath"
+          locator: "//div[@class='ant-dropdown-trigger']"
+          action: ac_hover
+# 4、点击选择第一个受检区域
+        - by: "xpath"
+          locator: "//div[contains(@class,'bottomLeft')]//li[1]//input"
+          action: click
+        - by: "id"
+          locator: "rcDialogTitle0"
+          action: click
+# 5、点击确定
+        - by: "xpath"
+          locator: "//button[@class='ant-btn ant-btn-primary']"
+          action: click
+
+search_important_task:
+# 1、校验：点击类型
+        - by: "xpath"
+          locator: "//div[@class='cms-Duty-tableHeader']//div[@class='ant-select-selection__rendered']"
+          action: click
+        - sleep: 1
+# 2、选择重点任务
+        - by: "xpath"
+          locator: "//ul[@role='listbox']/li[2]"
+          action: click
+# 3、搜索框输入
+        - by: "xpath"
+          locator: "//input[@placeholder]"
+          action: send
+          value: "important_task"
+# 4、点击搜索
+        - by: "xpath"
+          locator: "//i[contains(@class,'ant-input')]"
+          action: click
+        - sleep: 1
+# 5、检查搜索结果的名称
+        - by: "xpath"
+          locator: "//tbody/tr[1]//a"
+          return_value:
+
+
+add_other_task:
+# 1、点击添加
+        - by: "xpath"
+          locator: "//span[text()='添 加']/parent::button"
+          wait: clickable
+          action: click
+# 2、输入任务名称
+        - by: "id"
+          locator: "name"
+          action: send
+          value: "other_task"
+          return_value:
+# 3、点击类型
+        - by: "xpath"
+          locator: "//span//div[@class='ant-select-selection__rendered']"
+          action: click
+          wait: clickable
+# 4、选择其它任务
+        - by: "xpath"
+          locator: "//ul[contains(@class,'dropdown-menu-vertical')]/li[2]"
+          action: click
+#        - sleep: 1
+# 5、输入任务内容
+        - by: "id"
+          locator: "content"
+          action: send
+          value: "test"
+        - sleep: 0.5
+# 6、点击确定
+        - by: "xpath"
+          locator: "//button[@class='ant-btn ant-btn-primary']"
+          action: click
+#        - sleep: 3
+
+search_other_task:
+# 1、校验：点击类型
+        - by: "xpath"
+          locator: "//div[@class='cms-Duty-tableHeader']//div[@class='ant-select-selection__rendered']"
+          action: click
+# 2、选择重点任务
+        - by: "xpath"
+          locator: "//ul[contains(@class,'dropdown-menu-vertical')]/li[3]"
+          action: click
+# 3、搜索框输入
+        - by: "xpath"
+          locator: "//input[@placeholder]"
+          action: send
+          value: "other_task"
+# 4、点击搜索
+        - by: "xpath"
+          locator: "//i[contains(@class,'ant-input')]"
+          action: click
+        - sleep: 1
+# 5、检查搜索结果的名称
+        - by: "xpath"
+          locator: "//tbody/tr[1]//a"
+          return_value:
+
+add_spot_task:
+# 1、点击添加
+        - by: "xpath"
+          locator: "//span[text()='添 加']/parent::button"
+          wait: clickable
+          action: click
+# 2、输入任务名称
+        - by: "id"
+          locator: "name"
+          action: send
+          value: "spot_task"
+          return_value:
+# 3、点击类型
+        - by: "xpath"
+          locator: "//span//div[@class='ant-select-selection__rendered']"
+          action: click
+# 3、选择现场任务
+        - by: "xpath"
+          locator: "//ul[contains(@class,'dropdown-menu-vertical')]/li[3]"
+          action: click
+
+# 4、鼠标悬停到受检区域
+        - by: "xpath"
+          locator: "//div[@class='ant-dropdown-trigger']"
+          action: ac_hover
+# 5、点击选择第一个受检区域
+        - by: "xpath"
+          locator: "//div[contains(@class,'bottomLeft')]//li[1]//input"
+          action: click
+        - by: "id"
+          locator: "rcDialogTitle0"
+          action: click
+# 6、点击确定
+        - by: "xpath"
+          locator: "//button[@class='ant-btn ant-btn-primary']"
+          action: click
+
+
+search_spot_task:
+# 1、校验：点击类型
+        - by: "xpath"
+          locator: "//div[@class='cms-Duty-tableHeader']//div[@class='ant-select-selection__rendered']"
+          action: click
+# 2、选择现场任务
+        - by: "xpath"
+          locator: "//ul[@role='listbox']/li[4]"
+          action: click
+# 3、搜索框输入
+        - by: "xpath"
+          locator: "//input[@placeholder]"
+          action: send
+          value: "spot_task"
+# 4、点击搜索
+        - by: "xpath"
+          locator: "//i[contains(@class,'ant-input')]"
+          action: click
+        - sleep: 0.5
+# 5、检查搜索结果的名称
+        - by: "xpath"
+          locator: "//tbody/tr[1]//a"
+          return_value:
+
+
+edit_important_task:
+# 1、点击第一条任务的名称进入编辑页面
+        - by: "xpath"
+          locator: "//tbody/tr[1]/td[4]/span"
+          wait: clickable
+          action: click
+# 2、输入任务名称
+        - by: "id"
+          locator: "name"
+          action: send
+          value: "edit"
+        - value: "important_taskedit"
+          return_value:
+# 3、点击确定
+        - by: "xpath"
+          locator: "//button[@class='ant-btn ant-btn-primary']"
+          action: click
+        - sleep: 1.5
+# 4、获取第一条任务名称
+        - by: "xpath"
+          locator: "//tbody/tr[1]/td[4]//a"
+          return_value:
+
+
+edit_other_task:
+# 1、点击第一条任务的名称进入编辑页面
+        - by: "xpath"
+          locator: "//tbody/tr[1]/td[4]/span"
+          wait: clickable
+          action: click
+# 2、输入任务名称
+        - by: "id"
+          locator: "name"
+          action: send
+          value: "edit"
+        - value: "other_taskedit"
+          return_value:
+# 3、点击确定
+        - by: "xpath"
+          locator: "//button[@class='ant-btn ant-btn-primary']"
+          action: click
+        - sleep: 1.5
+# 4、获取第一条任务名称
+        - by: "xpath"
+          locator: "//tbody/tr[1]/td[4]//a"
+          return_value:
+
+edit_spot_task:
+# 1、点击第一条任务的名称进入编辑页面
+        - by: "xpath"
+          locator: "//tbody/tr[1]/td[4]/span"
+          wait: clickable
+          action: click
+# 2、输入任务名称
+        - by: "id"
+          locator: "name"
+          action: send
+          value: "edit"
+        - value: "spot_taskedit"
+          return_value:
+# 3、点击确定
+        - by: "xpath"
+          locator: "//button[@class='ant-btn ant-btn-primary']"
+          action: click
+        - sleep: 1.5
+# 4、获取第一条任务名称
+        - by: "xpath"
+          locator: "//tbody/tr[1]/td[4]//a"
+          return_value:
+
+del_important_task:
+# 1、点击勾选所有任务
+        - by: "xpath"
+          locator: "//thead//th[1]//input"
+          action: click
+# 2、获取勾选数量
+        - by: "xpath"
+          locator: "//tbody/tr[contains(@class,'selected')]"
+          number:
+          return_value:
+# 3、点击删除
+        - by: "xpath"
+          locator: "//span[text()='删 除']/parent::button"
+          action: click
+# 4、点击确定
+        - by: "xpath"
+          locator: "//span[text()='确 定']/parent::button"
+          action: click
+          wait: clickable
+        - sleep: 1
+
+del_other_task:
+# 1、点击勾选所有任务
+        - by: "xpath"
+          locator: "//thead//th[1]//input"
+          action: click
+# 2、获取勾选数量
+        - by: "xpath"
+          locator: "//tbody/tr[contains(@class,'selected')]"
+          number:
+          return_value:
+# 3、点击删除
+        - by: "xpath"
+          locator: "//span[text()='删 除']/parent::button"
+          action: click
+# 4、点击确定
+        - by: "xpath"
+          locator: "//span[text()='确 定']/parent::button"
+          action: click
+          wait: clickable
+        - sleep: 1
+
+del_spot_task:
+# 1、点击勾选所有任务
+        - by: "xpath"
+          locator: "//thead//th[1]//input"
+          action: click
+# 2、获取勾选数量
+        - by: "xpath"
+          locator: "//tbody/tr[contains(@class,'selected')]"
+          number:
+          return_value:
+# 3、点击删除
+        - by: "xpath"
+          locator: "//span[text()='删 除']/parent::button"
+          action: click
+# 4、点击确定
+        - by: "xpath"
+          locator: "//span[text()='确 定']/parent::button"
+          action: click
+          wait: clickable
+        - sleep: 1

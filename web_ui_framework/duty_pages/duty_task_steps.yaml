@@ -1,0 +1,128 @@
+add_duty_task:
+# 1、清空时间输入框
+        - by: "xpath"
+          locator: "//span[@class='ant-calendar-picker-icon']"
+          action: ac_hover
+        - by: "xpath"
+          locator: "//i[@class='anticon anticon-cross-circle ant-calendar-picker-clear']"
+          action: click
+          wait: clickable
+# 2、点击时间输入框
+        - by: "xpath"
+          locator: "//span[@class='ant-calendar-picker']"
+          action: click
+# 3、输入开始时间
+        - sleep: 0.5
+        - by: "xpath"
+          locator: "//div[contains(@class,'left')]//input[@class='ant-calendar-input ']"
+          action: send
+          value: send_value
+        - sleep: 1
+# 3、输入结束时间
+        - by: "xpath"
+          locator: "//div[contains(@class,'right')]//input[@class='ant-calendar-input ']"
+          action: send
+          value: send_value
+# 4、点击班次
+        - by: "xpath"
+          locator: "//div[@class='cms-Duty-searchItem']//div[@class='ant-select-selection__rendered']"
+          action: click
+# 5、选择第一班
+        - by: "xpath"
+          locator: "//ul[contains(@class,'menu-vertical')]/li[2]"
+          action: click
+# 6、点击查询
+        - by: "xpath"
+          locator: "//button[@class='ant-btn ant-btn-primary']"
+          action: click
+        - sleep: 1
+# 获取第一条计划的当前任务数
+        - by: "xpath"
+          locator: "//div[@id='inspectionPlanTaskControl']//tbody/tr[1]/td[last()-1]"
+          return_value:
+# 7、点击第一条计划的管理任务
+        - by: "xpath"
+          locator: "//div[@id='inspectionPlanTaskControl']//tbody/tr[1]/td[last()]//a"
+          action: click
+          wait: clickable
+# 8、点击添加
+        - by: "xpath"
+          locator: "//a/button"
+          action: click
+          wait: clickable
+# 9、点击组织机构栏
+        - by: "xpath"
+          locator: "//span[@class='ant-select-search__field__placeholder']"
+          action: click
+          wait: clickable
+# 10、点击顶级机构
+        - by: "xpath"
+          locator: "//span[@class='ant-select-tree-title']"
+          action: click
+# 11、鼠标移到受检区域
+        - by: "xpath"
+          locator: "//div[@class='ant-dropdown-trigger']"
+          action: ac_hover
+# 12、选择第一个区域
+        - by: "xpath"
+          locator: "//div[contains(@class,'bottomLeft')]//ul[contains(@class,'menu-vertical')]/li[1]//input"
+          action: click
+# 13、点击确定
+        - by: "xpath"
+          locator: "//div[@id='taskpopover']//button[@class='ant-btn ant-btn-primary']"
+          action: click
+# 14、点击确定
+        - by: "xpath"
+          locator: "//div[@class='ant-modal-footer']//button[@class='ant-btn ant-btn-primary']"
+          action: click
+        - sleep: 2
+# 获取第一条计划的当前任务数
+        - by: "xpath"
+          locator: "//div[@id='inspectionPlanTaskControl']//tbody/tr[1]/td[last()-1]"
+          return_value:
+
+check_result:
+# 1、清空时间输入框
+        - sleep: 1
+        - by: "xpath"
+          locator: "//span[@class='ant-calendar-picker-icon']"
+          action: ac_hover
+        - by: "xpath"
+          locator: "//i[@class='anticon anticon-cross-circle ant-calendar-picker-clear']"
+          action: click
+          wait: clickable
+# 2、点击时间输入框
+        - by: "xpath"
+          locator: "//span[@class='ant-calendar-picker']"
+          action: click
+# 3、输入开始时间
+        - sleep: 0.5
+        - by: "xpath"
+          locator: "//div[contains(@class,'left')]//input[@class='ant-calendar-input ']"
+          action: send
+          value: send_value
+        - sleep: 1
+# 3、输入结束时间
+        - by: "xpath"
+          locator: "//div[contains(@class,'right')]//input[@class='ant-calendar-input ']"
+          action: send
+          value: send_value
+# 4、点击班次
+        - by: "xpath"
+          locator: "//div[@class='cms-Duty-searchItem']//div[@class='ant-select-selection__rendered']"
+          action: click
+# 5、选择第一班
+        - by: "xpath"
+          locator: "//ul[contains(@class,'menu-vertical')]/li[2]"
+          action: click
+# 6、点击查询
+        - by: "xpath"
+          locator: "//button[@class='ant-btn ant-btn-primary']"
+          action: click
+        - sleep: 1
+# 7、点击第一条计划的管理任务
+        - by: "xpath"
+          locator: "//div[@id='inspectionPlanTaskControl']//tbody/tr[1]/td[last()]//a[@style]"
+          action: click
+          wait: clickable
+        - sleep: 1
