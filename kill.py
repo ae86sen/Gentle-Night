@@ -39,21 +39,17 @@ import requests
 # url = r"http://www.baidu.com"
 #
 # request_url(url)
+li = ["{'a':1,'b':2}","[11,22,33]"]
+li1 = [eval(i) for i in li]
+print(li1)
 
-data = [{"mob": "131", "pwd": "123456"},
-        {"mob": "132", "pwd": "123456"}]
-def register():
-    names = input("请输入账号：")
-    users = [x['mob'] for x in data]
-        # print(i.get("mob")) # 遍历得到的mob为131 和132
-    if names not in  users:
-        pwd1 = input("请输入密码：")
-        pwd2 = input("请确认密码：")
-        if pwd2 == pwd1:
-            print("注册成功")
-        else:
-            print("两次密码不一致")
-    else:
-        print("账号已被注册")
+li2 = [i*5 for i in range(0,11)]
+print(li2)
 
-register()
+li3 = [f"page{i}" for i in range(1,11)]
+print(li3)
+
+Names = ["python","c","c++","java","unittest","djagon","flask"]
+li4 = [i for i in Names if len(i)>4]
+li5 = [i if len(i)>4 else None for i in Names]
+print(li5)
